@@ -353,12 +353,12 @@ int main(int argc, char** argv) {
 			wykonaj(akt, x, 1);
 			wypisz(akt);
 			auto start = high_resolution_clock::now();
-			for(int i = 5; i < 42 - 2 * (k - 1); i++) {
+			for(int i = 6; i < 42 - 2 * (k - 1); i++) {
 				x = ruch(akt, 2, i, 16);
 				auto stop = high_resolution_clock::now();
 				auto duration = duration_cast<microseconds>(stop - start);
 				ll tim = duration.count();
-				if(tim > 700000) {
+				if(tim > 1000000) {
 					break;
 				}
 			}
@@ -373,12 +373,12 @@ int main(int argc, char** argv) {
 		while(!wyg(akt)) {
 			int x;
 			auto start = high_resolution_clock::now();
-			for(int i = 5; i < 42 - 2 * (k - 1); i++) {
+			for(int i = 6; i < 42 - 2 * (k - 1); i++) {
 				x = ruch(akt, 1, i, 16);
 				auto stop = high_resolution_clock::now();
 				auto duration = duration_cast<microseconds>(stop - start);
 				ll tim = duration.count();
-				if(tim > 700000) {
+				if(tim > 1000000) {
 					break;
 				}
 			}
