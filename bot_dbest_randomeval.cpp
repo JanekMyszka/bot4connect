@@ -320,7 +320,7 @@ int ruch(P &a, int nr, int DEPTH, int LOS) {
 	for(int j = 0; j < 7; j++) {
 		P tmp = a;
 		if(wykonaj(tmp, j, nr)) {
-			int x = rek(tmp, nr, 1, DEPTH, -1e9, 1e9, LOS);
+			int x = rek(tmp, nr, 1, DEPTH, mx, 1e9, LOS);
 			if(x >= mx) {
 				mx = x;
 				kt = j;
@@ -392,7 +392,7 @@ int main(int argc, char** argv) {
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
 					ll tim = duration.count();
-					if(tim > 700000) {
+					if(tim > 800000) {
 						break;
 					}
 				}
@@ -403,7 +403,7 @@ int main(int argc, char** argv) {
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
 					ll tim = duration.count();
-					if(tim > 700000) {
+					if(tim > 800000) {
 						break;
 					}
 				}
