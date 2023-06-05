@@ -85,7 +85,7 @@ void wypisz(P &a) {
 		cout << '\n';
 	}
 	cout << '\n';
-	for(int j = 1; j <= 7; j++) {
+	for(int j = 0; j < 7; j++) {
 		cout << j;
 	}
 	cout << '\n';
@@ -346,24 +346,37 @@ int main(int argc, char** argv) {
 			if(wyg(akt)) {
 				break;
 			}
-			cout << "PODAJ LICZBE OD 1 DO 7\n";
+			cout << "PODAJ LICZBE OD 0 DO 6\n";
 			int x;
 			cin >> x;
-			x--;
+			//x--;
 			wykonaj(akt, x, 1);
 			wypisz(akt);
 			auto start = high_resolution_clock::now();
-			for(int i = 6; i < 42 - 2 * (k - 1); i++) {
-				x = ruch(akt, 2, i, 16);
-				auto stop = high_resolution_clock::now();
-				auto duration = duration_cast<microseconds>(stop - start);
-				ll tim = duration.count();
-				if(tim > 1000000) {
-					break;
+			if(42 - 2 * (k - 1) < 9) {
+				for(int i = 0; i < 42 - 2 * (k - 1); i++) {
+					x = ruch(akt, 1, i, 16);
+					auto stop = high_resolution_clock::now();
+					auto duration = duration_cast<microseconds>(stop - start);
+					ll tim = duration.count();
+					if(tim > 700000) {
+						break;
+					}
+				}
+			}
+			else {
+				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
+					x = ruch(akt, 1, i, 16);
+					auto stop = high_resolution_clock::now();
+					auto duration = duration_cast<microseconds>(stop - start);
+					ll tim = duration.count();
+					if(tim > 700000) {
+						break;
+					}
 				}
 			}
 			wykonaj(akt, x, 2);
-			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x + 1 << '\n';
+			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x << '\n';
 			wypisz(akt);
 			k++;
 		}
@@ -373,25 +386,38 @@ int main(int argc, char** argv) {
 		while(!wyg(akt)) {
 			int x;
 			auto start = high_resolution_clock::now();
-			for(int i = 6; i < 42 - 2 * (k - 1); i++) {
-				x = ruch(akt, 1, i, 16);
-				auto stop = high_resolution_clock::now();
-				auto duration = duration_cast<microseconds>(stop - start);
-				ll tim = duration.count();
-				if(tim > 1000000) {
-					break;
+			if(42 - 2 * (k - 1) < 9) {
+				for(int i = 0; i < 42 - 2 * (k - 1); i++) {
+					x = ruch(akt, 1, i, 16);
+					auto stop = high_resolution_clock::now();
+					auto duration = duration_cast<microseconds>(stop - start);
+					ll tim = duration.count();
+					if(tim > 700000) {
+						break;
+					}
+				}
+			}
+			else {
+				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
+					x = ruch(akt, 1, i, 16);
+					auto stop = high_resolution_clock::now();
+					auto duration = duration_cast<microseconds>(stop - start);
+					ll tim = duration.count();
+					if(tim > 700000) {
+						break;
+					}
 				}
 			}
 			wykonaj(akt, x, 1);
-			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x + 1 << '\n';
+			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x << '\n';
 			wypisz(akt);
 			if(wyg(akt)) {
 				break;
 			}
-			cout << "PODAJ LICZBE OD 1 DO 7\n";
+			cout << "PODAJ LICZBE OD 0 DO 6\n";
 			x;
 			cin >> x;
-			x--;
+			//x--;
 			wykonaj(akt, x, 2);
 			wypisz(akt);
 			k++;
