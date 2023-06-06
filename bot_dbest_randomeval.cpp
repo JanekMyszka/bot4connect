@@ -327,7 +327,6 @@ int ruch(P &a, int nr, int DEPTH, int LOS) {
 			}
 		}
 	}
-	cout << mx << '\n';
 	return kt;
 }
 int main(int argc, char** argv) {
@@ -376,7 +375,7 @@ int main(int argc, char** argv) {
 				}
 			}
 			else {
-				for(int i = 5; i < 42 - 2 * (k - 1); i++) {
+				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
 					x = ruch(akt, 2, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
@@ -420,7 +419,7 @@ int main(int argc, char** argv) {
 				}
 			}
 			else {
-				for(int i = 5; i < 42 - 2 * (k - 1); i++) {
+				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
 					x = ruch(akt, 1, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
@@ -437,7 +436,6 @@ int main(int argc, char** argv) {
 				break;
 			}
 			cout << "PODAJ LICZBE OD 1 DO 7\n";
-			x;
 			cin >> x;
 			x--;
 			wykonaj(akt, x, 2);
