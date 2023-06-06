@@ -248,6 +248,13 @@ int eval(P &a, int nr, int LOS) {
 	return ans;
 }
 int rek(P &a, int nr, int tp, int ile, int alfa, int beta, int LOS) {
+	int x = wyg(a);
+	if(x) {
+		if(x == nr) {
+			return 1e9;
+		}
+		return -1e9;
+	}
 	bool czy = 1;
 	for(int i = 0; i < 6; i++) {
 		for(int j = 0; j < 7; j++) {
@@ -258,13 +265,6 @@ int rek(P &a, int nr, int tp, int ile, int alfa, int beta, int LOS) {
 	}
 	if(czy) {
 		return 0;
-	}
-	int x = wyg(a);
-	if(x) {
-		if(x == nr) {
-			return 1e9;
-		}
-		return -1e9;
 	}
 	if(!ile) {
 		return eval(a, nr, LOS);
@@ -327,6 +327,7 @@ int ruch(P &a, int nr, int DEPTH, int LOS) {
 			}
 		}
 	}
+	cout << mx << '\n';
 	return kt;
 }
 int main(int argc, char** argv) {
