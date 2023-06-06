@@ -255,15 +255,15 @@ int rek(P &a, int nr, int tp, int ile, int alfa, int beta, int LOS) {
 		}
 		return -1e9;
 	}
-	bool czy = 1;
+	int wol = 0;
 	for(int i = 0; i < 6; i++) {
 		for(int j = 0; j < 7; j++) {
 			if(!a[i][j]) {
-				czy = 0;
+				wol++;
 			}
 		}
 	}
-	if(czy) {
+	if(!wol) {
 		return 0;
 	}
 	if(!ile) {
@@ -376,7 +376,7 @@ int main(int argc, char** argv) {
 				}
 			}
 			else {
-				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
+				for(int i = 5; i < 42 - 2 * (k - 1); i++) {
 					x = ruch(akt, 2, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
@@ -420,7 +420,7 @@ int main(int argc, char** argv) {
 				}
 			}
 			else {
-				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
+				for(int i = 5; i < 42 - 2 * (k - 1); i++) {
 					x = ruch(akt, 1, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
