@@ -355,22 +355,22 @@ int main(int argc, char** argv) {
 			auto start = high_resolution_clock::now();
 			if(42 - 2 * (k - 1) < 9) {
 				for(int i = 0; i < 42 - 2 * (k - 1); i++) {
-					x = ruch(akt, 1, i, 16);
+					x = ruch(akt, 2, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
 					ll tim = duration.count();
-					if(tim > 700000) {
+					if(tim > 800000) {
 						break;
 					}
 				}
 			}
 			else {
-				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
-					x = ruch(akt, 1, i, 16);
+				for(int i = 5; i < 42 - 2 * (k - 1); i++) {
+					x = ruch(akt, 2, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
 					ll tim = duration.count();
-					if(tim > 700000) {
+					if(tim > 800000) {
 						break;
 					}
 				}
@@ -392,18 +392,18 @@ int main(int argc, char** argv) {
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
 					ll tim = duration.count();
-					if(tim > 700000) {
+					if(tim > 800000) {
 						break;
 					}
 				}
 			}
 			else {
-				for(int i = 6; i < 42 - 2 * (k - 1); i++) {
+				for(int i = 5; i < 42 - 2 * (k - 1); i++) {
 					x = ruch(akt, 1, i, 16);
 					auto stop = high_resolution_clock::now();
 					auto duration = duration_cast<microseconds>(stop - start);
 					ll tim = duration.count();
-					if(tim > 700000) {
+					if(tim > 800000) {
 						break;
 					}
 				}
