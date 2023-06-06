@@ -85,7 +85,7 @@ void wypisz(P &a) {
 		cout << '\n';
 	}
 	cout << '\n';
-	for(int j = 0; j < 7; j++) {
+	for(int j = 1; j <= 7; j++) {
 		cout << j;
 	}
 	cout << '\n';
@@ -343,14 +343,25 @@ int main(int argc, char** argv) {
 		wypisz(akt);
 		int k = 1;
 		while(!wyg(akt)) {
+			bool czy = 0;
+			for(int i = 0; i < 6; i++) {
+				for(int j = 0; j < 7; j++) {
+					if(!akt[i][j]) {
+						czy = 1;
+					}
+				}
+			}
+			if(!czy) {
+				break;
+			}
+			cout << "PODAJ LICZBE OD 1 DO 7\n";
+			int x;
+			cin >> x;
+			x--;
+			wykonaj(akt, x, 1);
 			if(wyg(akt)) {
 				break;
 			}
-			cout << "PODAJ LICZBE OD 0 DO 6\n";
-			int x;
-			cin >> x;
-			//x--;
-			wykonaj(akt, x, 1);
 			wypisz(akt);
 			auto start = high_resolution_clock::now();
 			if(42 - 2 * (k - 1) < 9) {
@@ -376,7 +387,7 @@ int main(int argc, char** argv) {
 				}
 			}
 			wykonaj(akt, x, 2);
-			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x << '\n';
+			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x + 1 << '\n';
 			wypisz(akt);
 			k++;
 		}
@@ -384,6 +395,17 @@ int main(int argc, char** argv) {
 	else {
 		int k = 1;
 		while(!wyg(akt)) {
+			bool czy = 0;
+			for(int i = 0; i < 6; i++) {
+				for(int j = 0; j < 7; j++) {
+					if(!akt[i][j]) {
+						czy = 1;
+					}
+				}
+			}
+			if(!czy) {
+				break;
+			}
 			int x;
 			auto start = high_resolution_clock::now();
 			if(42 - 2 * (k - 1) < 9) {
@@ -409,15 +431,15 @@ int main(int argc, char** argv) {
 				}
 			}
 			wykonaj(akt, x, 1);
-			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x << '\n';
+			cout << "BOT ZAGRAL DO KOLUMNY NR : " << x + 1 << '\n';
 			wypisz(akt);
 			if(wyg(akt)) {
 				break;
 			}
-			cout << "PODAJ LICZBE OD 0 DO 6\n";
+			cout << "PODAJ LICZBE OD 1 DO 7\n";
 			x;
 			cin >> x;
-			//x--;
+			x--;
 			wykonaj(akt, x, 2);
 			wypisz(akt);
 			k++;
